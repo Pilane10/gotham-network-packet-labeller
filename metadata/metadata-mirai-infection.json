@@ -1,0 +1,90 @@
+[
+    {
+        "source_ip": "192.168.0.100",
+        "destination_ip": "192.168.x.x",
+        "source_port": 65148,
+        "destination_port": 23,
+        "label": "TCP Scan"
+    },
+    {
+        "source_ip": "192.168.x.x",
+        "destination_ip": "192.168.0.100",
+        "source_port": 23,
+        "destination_port": 65148,
+        "label": "TCP Scan"
+    },
+    {
+        "source_ip": "192.168.0.100",
+        "destination_ip": "192.168.x.x",
+        "source_port": 65148,
+        "destination_port": 2323,
+        "label": "TCP Scan"
+    },
+    {
+        "source_ip": "192.168.x.x",
+        "destination_ip": "192.168.0.100",
+        "source_port": 2323,
+        "destination_port": 65148,
+        "label": "TCP Scan"
+    },
+
+    {
+        "source_ip": "192.168.0.100",
+        "destination_ip": "192.168.x.x",
+        "label": "Telnet Brute Force"
+    },
+    {
+        "source_ip": "192.168.x.x",
+        "destination_ip": "192.168.0.100",
+        "label": "Telnet Brute Force"
+    },
+
+    {
+        "source_ip": "192.168.33.11",
+        "destination_ip": "192.168.x.x",
+        "label": "Reporting"
+    },
+    {
+        "source_ip": "192.168.x.x",
+        "destination_ip": "192.168.33.11",
+        "label": "Reporting"
+    },
+
+    {
+        "source_ip": "192.168.33.10",
+        "destination_ip": "192.168.x.x",
+        "label": "C&C Communication"
+    },
+    {
+        "source_ip": "192.168.x.x",
+        "destination_ip": "192.168.33.10",
+        "label": "C&C Communication"
+    },
+
+    {
+        "source_ip": "192.168.33.12",
+        "destination_ip": "192.168.x.x",
+        "label": "Ingress Tool Transfer"
+    },
+    {
+        "source_ip": "192.168.x.x",
+        "destination_ip": "192.168.33.12",
+        "label": "Ingress Tool Transfer"
+    },
+
+    {
+        "source_ip": "192.168.33.13",
+        "destination_ip": "192.168.x.x",
+        "label": "File Download"
+    },
+    {
+        "source_ip": "192.168.x.x",
+        "destination_ip": "192.168.33.13",
+        "label": "File Download"
+    },
+    {
+        "source_ip": "192.168.x.x",
+        "destination_ip": "192.168.x.x",
+        "label": "TCP Scan"
+    }
+]

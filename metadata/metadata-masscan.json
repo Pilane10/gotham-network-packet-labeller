@@ -1,0 +1,12 @@
+[
+    {
+        "source_ip": "192.168.35.10",
+        "destination_ip": "192.168.x.x",
+        "label": "TCP Scan"
+    },
+    {
+        "source_ip": "192.168.x.x",
+        "destination_ip": "192.168.35.10",
+        "label": "TCP Scan"
+    }
+]

@@ -1,0 +1,124 @@
+[
+    {
+        "source_ip": "192.168.x.x",
+        "destination_ip": "192.168.34.10",
+        "label": "Merlin C&C Communication"
+    },
+    {
+        "source_ip": "192.168.34.10",
+        "destination_ip": "192.168.x.x",
+        "label": "Merlin C&C Communication"
+    },
+
+    {
+        "source_ip": "192.168.20.10",
+        "destination_ip": "192.168.18.18",
+        "protocol": "1",
+        "label": "Merlin ICMP Flooding"
+    },
+    {
+        "source_ip": "192.168.18.18",
+        "destination_ip": "192.168.20.10",
+        "protocol": "1",
+        "label": "Merlin ICMP Flooding"
+    },
+    {
+        "source_ip": "192.168.17.15",
+        "destination_ip": "192.168.18.15",
+        "protocol": "1",
+        "label": "Merlin ICMP Flooding"
+    },
+    {
+        "source_ip": "192.168.18.15",
+        "destination_ip": "192.168.17.15",
+        "protocol": "1",
+        "label": "Merlin ICMP Flooding"
+    },
+    {
+        "source_ip": "192.168.17.10",
+        "destination_ip": "192.168.18.10",
+        "protocol": "1",
+        "label": "Merlin ICMP Flooding"
+    },
+    {
+        "source_ip": "192.168.18.10",
+        "destination_ip": "192.168.17.10",
+        "protocol": "1",
+        "label": "Merlin ICMP Flooding"
+    },
+
+    {
+        "source_ip": "192.168.20.10",
+        "destination_ip": "192.168.18.18",
+        "protocol": "17",
+        "label": "Merlin UDP Flooding"
+    },
+    {
+        "source_ip": "192.168.18.18",
+        "destination_ip": "192.168.20.10",
+        "protocol": "17",
+        "label": "Merlin UDP Flooding"
+    },
+    {
+        "source_ip": "192.168.17.15",
+        "destination_ip": "192.168.18.15",
+        "protocol": "17",
+        "label": "Merlin UDP Flooding"
+    },
+    {
+        "source_ip": "192.168.18.15",
+        "destination_ip": "192.168.17.15",
+        "protocol": "17",
+        "label": "Merlin UDP Flooding"
+    },
+    {
+        "source_ip": "192.168.17.10",
+        "destination_ip": "192.168.18.10",
+        "protocol": "17",
+        "label": "Merlin UDP Flooding"
+    },
+    {
+        "source_ip": "192.168.18.10",
+        "destination_ip": "192.168.17.10",
+        "protocol": "17",
+        "label": "Merlin UDP Flooding"
+    },
+
+    {
+        "source_ip": "192.168.20.10",
+        "destination_ip": "192.168.18.18",
+        "protocol": "6",
+        "label": "Merlin TCP Flooding"
+    },
+    {
+        "source_ip": "192.168.18.18",
+        "destination_ip": "192.168.20.10",
+        "protocol": "6",
+        "label": "Merlin TCP Flooding"
+    },
+    {
+        "source_ip": "192.168.17.15",
+        "destination_ip": "192.168.18.15",
+        "protocol": "6",
+        "label": "Merlin TCP Flooding"
+    },
+    {
+        "source_ip": "192.168.18.15",
+        "destination_ip": "192.168.17.15",
+        "protocol": "6",
+        "label": "Merlin TCP Flooding"
+    },
+    {
+        "source_ip": "192.168.17.10",
+        "destination_ip": "192.168.18.10",
+        "protocol": "6",
+        "label": "Merlin TCP Flooding"
+    },
+    {
+        "source_ip": "192.168.18.10",
+        "destination_ip": "192.168.17.10",
+        "protocol": "6",
+        "label": "Merlin TCP Flooding"
+    }
+]
+

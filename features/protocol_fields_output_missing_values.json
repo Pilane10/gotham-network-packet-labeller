@@ -1,0 +1,1664 @@
+{
+    "features": [
+        {
+            "field": "frame.time",
+            "protocol_dependency": "frame",
+            "description": "Arrival Time"
+        },
+        {
+            "field": "frame.time_epoch",
+            "protocol_dependency": "frame",
+            "description": "Epoch Arrival Time"
+        },
+        {
+            "field": "frame.offset_shift",
+            "protocol_dependency": "frame",
+            "description": "Time shift for this packet"
+        },
+        {
+            "field": "frame.time_delta",
+            "protocol_dependency": "frame",
+            "description": "Time delta from previous captured frame"
+        },
+        {
+            "field": "frame.time_relative",
+            "protocol_dependency": "frame",
+            "description": "Time since reference or first frame"
+        },
+        {
+            "field": "frame.number",
+            "protocol_dependency": "frame",
+            "description": "Frame Number"
+        },
+        {
+            "field": "frame.len",
+            "protocol_dependency": "frame",
+            "description": "Frame length on the wire"
+        },
+        {
+            "field": "frame.marked",
+            "protocol_dependency": "frame",
+            "description": "Frame is marked"
+        },
+        {
+            "field": "frame.ignored",
+            "protocol_dependency": "frame",
+            "description": "Frame is ignored"
+        },
+        {
+            "field": "frame.protocols",
+            "protocol_dependency": "frame",
+            "description": "Protocols in frame"
+        },
+        {
+            "field": "frame.encap_type",
+            "protocol_dependency": "frame",
+            "description": "Encapsulation type"
+        },
+        {
+            "field": "eth.dst",
+            "protocol_dependency": "eth",
+            "description": "Destination"
+        },
+        {
+            "field": "eth.dst.oui",
+            "protocol_dependency": "eth",
+            "description": "Destination OUI"
+        },
+        {
+            "field": "eth.src",
+            "protocol_dependency": "eth",
+            "description": "Source"
+        },
+        {
+            "field": "eth.src.oui",
+            "protocol_dependency": "eth",
+            "description": "Source OUI"
+        },
+        {
+            "field": "eth.type",
+            "protocol_dependency": "eth",
+            "description": "Type"
+        },
+        {
+            "field": "eth.dst.lg",
+            "protocol_dependency": "eth",
+            "description": "LG bit"
+        },
+        {
+            "field": "eth.dst.ig",
+            "protocol_dependency": "eth",
+            "description": "IG bit"
+        },
+        {
+            "field": "eth.src.lg",
+            "protocol_dependency": "eth",
+            "description": "LG bit"
+        },
+        {
+            "field": "eth.src.ig",
+            "protocol_dependency": "eth",
+            "description": "IG bit"
+        },
+        {
+            "field": "arp.hw.type",
+            "protocol_dependency": "arp",
+            "description": "Hardware type"
+        },
+        {
+            "field": "arp.proto.type",
+            "protocol_dependency": "arp",
+            "description": "Protocol type"
+        },
+        {
+            "field": "arp.hw.size",
+            "protocol_dependency": "arp",
+            "description": "Hardware size"
+        },
+        {
+            "field": "arp.proto.size",
+            "protocol_dependency": "arp",
+            "description": "Protocol size"
+        },
+        {
+            "field": "arp.opcode",
+            "protocol_dependency": "arp",
+            "description": "Opcode"
+        },
+        {
+            "field": "arp.src.hw_mac",
+            "protocol_dependency": "arp",
+            "description": "Sender MAC address"
+        },
+        {
+            "field": "arp.src.proto_ipv4",
+            "protocol_dependency": "arp",
+            "description": "Sender IP address"
+        },
+        {
+            "field": "arp.dst.hw_mac",
+            "protocol_dependency": "arp",
+            "description": "Target MAC address"
+        },
+        {
+            "field": "arp.dst.proto_ipv4",
+            "protocol_dependency": "arp",
+            "description": "Target IP address"
+        },
+        {
+            "field": "icmp.type",
+            "protocol_dependency": "icmp",
+            "description": "Type"
+        },
+        {
+            "field": "icmp.code",
+            "protocol_dependency": "icmp",
+            "description": "Code"
+        },
+        {
+            "field": "icmp.checksum",
+            "protocol_dependency": "icmp",
+            "description": "Checksum"
+        },
+        {
+            "field": "icmp.checksum.status",
+            "protocol_dependency": "icmp",
+            "description": "Checksum Status"
+        },
+        {
+            "field": "icmp.unused",
+            "protocol_dependency": "icmp",
+            "description": "Unused"
+        },
+        {
+            "field": "icmp.ident",
+            "protocol_dependency": "icmp",
+            "description": "Identifier (BE)"
+        },
+        {
+            "field": "icmp.ident_le",
+            "protocol_dependency": "icmp",
+            "description": "Identifier (LE)"
+        },
+        {
+            "field": "icmp.seq",
+            "protocol_dependency": "icmp",
+            "description": "Sequence Number (BE)"
+        },
+        {
+            "field": "icmp.seq_le",
+            "protocol_dependency": "icmp",
+            "description": "Sequence Number (LE)"
+        },
+        {
+            "field": "icmp.originate_timestamp",
+            "protocol_dependency": "icmp",
+            "description": "Originate Timestamp"
+        },
+        {
+            "field": "icmp.receive_timestamp",
+            "protocol_dependency": "icmp",
+            "description": "Receive Timestamp"
+        },
+        {
+            "field": "icmp.transmit_timestamp",
+            "protocol_dependency": "icmp",
+            "description": "Transmit Timestamp"
+        },
+        {
+            "field": "icmp.resp_to",
+            "protocol_dependency": "icmp",
+            "description": "Request frame"
+        },
+        {
+            "field": "icmp.resptime",
+            "protocol_dependency": "icmp",
+            "description": "Response time"
+        },
+        {
+            "field": "icmp.data_time",
+            "protocol_dependency": "icmp",
+            "description": "Timestamp from icmp data"
+        },
+        {
+            "field": "icmp.data_time_relative",
+            "protocol_dependency": "icmp",
+            "description": "Timestamp from icmp data (relative)"
+        },
+        {
+            "field": "icmpv6.type",
+            "protocol_dependency": "icmpv6",
+            "description": "Type"
+        },
+        {
+            "field": "icmpv6.code",
+            "protocol_dependency": "icmpv6",
+            "description": "Code"
+        },
+        {
+            "field": "icmpv6.checksum",
+            "protocol_dependency": "icmpv6",
+            "description": "Checksum"
+        },
+        {
+            "field": "icmpv6.checksum.status",
+            "protocol_dependency": "icmpv6",
+            "description": "Checksum Status"
+        },
+        {
+            "field": "icmpv6.reserved",
+            "protocol_dependency": "icmpv6",
+            "description": "Reserved"
+        },
+        {
+            "field": "icmpv6.nd.ns.target_address",
+            "protocol_dependency": "icmpv6",
+            "description": "Target Address"
+        },
+        {
+            "field": "icmpv6.nd.na.flag",
+            "protocol_dependency": "icmpv6",
+            "description": "Flags"
+        },
+        {
+            "field": "icmpv6.nd.na.flag.r",
+            "protocol_dependency": "icmpv6",
+            "description": "Router"
+        },
+        {
+            "field": "icmpv6.nd.na.flag.s",
+            "protocol_dependency": "icmpv6",
+            "description": "Solicited"
+        },
+        {
+            "field": "icmpv6.nd.na.flag.o",
+            "protocol_dependency": "icmpv6",
+            "description": "Override"
+        },
+        {
+            "field": "icmpv6.nd.na.flag.rsv",
+            "protocol_dependency": "icmpv6",
+            "description": "Reserved"
+        },
+        {
+            "field": "icmpv6.nd.na.target_address",
+            "protocol_dependency": "icmpv6",
+            "description": "Target Address"
+        },
+        {
+            "field": "icmpv6.opt",
+            "protocol_dependency": "icmpv6",
+            "description": "ICMPv6 Option"
+        },
+        {
+            "field": "icmpv6.opt.type",
+            "protocol_dependency": "icmpv6",
+            "description": "Type"
+        },
+        {
+            "field": "icmpv6.opt.length",
+            "protocol_dependency": "icmpv6",
+            "description": "Length"
+        },
+        {
+            "field": "icmpv6.opt.linkaddr",
+            "protocol_dependency": "icmpv6",
+            "description": "Link-layer address"
+        },
+        {
+            "field": "icmpv6.opt.src_linkaddr",
+            "protocol_dependency": "icmpv6",
+            "description": "Source Link-layer address"
+        },
+        {
+            "field": "icmpv6.opt.target_linkaddr",
+            "protocol_dependency": "icmpv6",
+            "description": "Target Link-layer address"
+        },
+        {
+            "field": "icmpv6.opt.nonce",
+            "protocol_dependency": "icmpv6",
+            "description": "Nonce"
+        },
+        {
+            "field": "icmpv6.mldr.nb_mcast_records",
+            "protocol_dependency": "icmpv6",
+            "description": "Number of Multicast Address Records"
+        },
+        {
+            "field": "icmpv6.mldr.mar",
+            "protocol_dependency": "icmpv6",
+            "description": "Multicast Address Record"
+        },
+        {
+            "field": "icmpv6.mldr.mar.record_type",
+            "protocol_dependency": "icmpv6",
+            "description": "Record Type"
+        },
+        {
+            "field": "icmpv6.mldr.mar.aux_data_len",
+            "protocol_dependency": "icmpv6",
+            "description": "Aux Data Len"
+        },
+        {
+            "field": "icmpv6.mldr.mar.nb_sources",
+            "protocol_dependency": "icmpv6",
+            "description": "Number of Sources"
+        },
+        {
+            "field": "icmpv6.mldr.mar.multicast_address",
+            "protocol_dependency": "icmpv6",
+            "description": "Multicast Address"
+        },
+        {
+            "field": "ip.version",
+            "protocol_dependency": "ip",
+            "description": "Version"
+        },
+        {
+            "field": "ip.hdr_len",
+            "protocol_dependency": "ip",
+            "description": "Header Length"
+        },
+        {
+            "field": "ip.dsfield",
+            "protocol_dependency": "ip",
+            "description": "Differentiated Services Field"
+        },
+        {
+            "field": "ip.dsfield.dscp",
+            "protocol_dependency": "ip",
+            "description": "Differentiated Services Codepoint"
+        },
+        {
+            "field": "ip.dsfield.ecn",
+            "protocol_dependency": "ip",
+            "description": "Explicit Congestion Notification"
+        },
+        {
+            "field": "ip.len",
+            "protocol_dependency": "ip",
+            "description": "Total Length"
+        },
+        {
+            "field": "ip.id",
+            "protocol_dependency": "ip",
+            "description": "Identification"
+        },
+        {
+            "field": "ip.dst",
+            "protocol_dependency": "ip",
+            "description": "Destination Address"
+        },
+        {
+            "field": "ip.src",
+            "protocol_dependency": "ip",
+            "description": "Source Address"
+        },
+        {
+            "field": "ip.flags",
+            "protocol_dependency": "ip",
+            "description": "Flags"
+        },
+        {
+            "field": "ip.flags.rb",
+            "protocol_dependency": "ip",
+            "description": "Reserved bit"
+        },
+        {
+            "field": "ip.flags.df",
+            "protocol_dependency": "ip",
+            "description": "Don't fragment"
+        },
+        {
+            "field": "ip.flags.mf",
+            "protocol_dependency": "ip",
+            "description": "More fragments"
+        },
+        {
+            "field": "ip.frag_offset",
+            "protocol_dependency": "ip",
+            "description": "Fragment Offset"
+        },
+        {
+            "field": "ip.ttl",
+            "protocol_dependency": "ip",
+            "description": "Time to Live"
+        },
+        {
+            "field": "ip.proto",
+            "protocol_dependency": "ip",
+            "description": "Protocol"
+        },
+        {
+            "field": "ip.checksum",
+            "protocol_dependency": "ip",
+            "description": "Header Checksum"
+        },
+        {
+            "field": "ip.checksum.status",
+            "protocol_dependency": "ip",
+            "description": "Header checksum status"
+        },
+        {
+            "field": "ip.opt.len.invalid",
+            "protocol_dependency": "ip",
+            "description": "Invalid length for option"
+        },
+        {
+            "field": "ip.bogus_ip_length",
+            "protocol_dependency": "ip",
+            "description": "Bogus IP length"
+        },
+        {
+            "field": "ipv6.version",
+            "protocol_dependency": "ipv6",
+            "description": "Version"
+        },
+        {
+            "field": "ipv6.tclass",
+            "protocol_dependency": "ipv6",
+            "description": "Traffic Class"
+        },
+        {
+            "field": "ipv6.tclass.dscp",
+            "protocol_dependency": "ipv6",
+            "description": "Differentiated Services Codepoint"
+        },
+        {
+            "field": "ipv6.tclass.ecn",
+            "protocol_dependency": "ipv6",
+            "description": "Explicit Congestion Notification"
+        },
+        {
+            "field": "ipv6.flow",
+            "protocol_dependency": "ipv6",
+            "description": "Flow Label"
+        },
+        {
+            "field": "ipv6.plen",
+            "protocol_dependency": "ipv6",
+            "description": "Payload Length"
+        },
+        {
+            "field": "ipv6.nxt",
+            "protocol_dependency": "ipv6",
+            "description": "Next Header"
+        },
+        {
+            "field": "ipv6.hlim",
+            "protocol_dependency": "ipv6",
+            "description": "Hop Limit"
+        },
+        {
+            "field": "ipv6.src",
+            "protocol_dependency": "ipv6",
+            "description": "Source Address"
+        },
+        {
+            "field": "ipv6.src_host",
+            "protocol_dependency": "ipv6",
+            "description": "Source Host"
+        },
+        {
+            "field": "ipv6.dst",
+            "protocol_dependency": "ipv6",
+            "description": "Destination Address"
+        },
+        {
+            "field": "ipv6.dst_host",
+            "protocol_dependency": "ipv6",
+            "description": "Destination Host"
+        },
+        {
+            "field": "ipv6.addr",
+            "protocol_dependency": "ipv6",
+            "description": "Source or Destination Address"
+        },
+        {
+            "field": "ipv6.host",
+            "protocol_dependency": "ipv6",
+            "description": "Source or Destination Host"
+        },
+        {
+            "field": "ipv6.opt",
+            "protocol_dependency": "ipv6",
+            "description": "IPv6 Option"
+        },
+        {
+            "field": "ipv6.opt.type",
+            "protocol_dependency": "ipv6",
+            "description": "Type"
+        },
+        {
+            "field": "ipv6.opt.type.action",
+            "protocol_dependency": "ipv6",
+            "description": "Action"
+        },
+        {
+            "field": "ipv6.opt.type.change",
+            "protocol_dependency": "ipv6",
+            "description": "May Change"
+        },
+        {
+            "field": "ipv6.opt.type.rest",
+            "protocol_dependency": "ipv6",
+            "description": "Low-Order Bits"
+        },
+        {
+            "field": "ipv6.opt.length",
+            "protocol_dependency": "ipv6",
+            "description": "Length"
+        },
+        {
+            "field": "ipv6.opt.padn",
+            "protocol_dependency": "ipv6",
+            "description": "PadN"
+        },
+        {
+            "field": "ipv6.opt.router_alert",
+            "protocol_dependency": "ipv6",
+            "description": "Router Alert"
+        },
+        {
+            "field": "ipv6.bogus_ipv6_version",
+            "protocol_dependency": "ipv6",
+            "description": "Bogus IP version"
+        },
+        {
+            "field": "ipv6.hopopts",
+            "protocol_dependency": "ipv6",
+            "description": "IPv6 Hop-by-Hop Option"
+        },
+        {
+            "field": "ipv6.hopopts.nxt",
+            "protocol_dependency": "ipv6",
+            "description": "Next Header"
+        },
+        {
+            "field": "ipv6.hopopts.len",
+            "protocol_dependency": "ipv6",
+            "description": "Length"
+        },
+        {
+            "field": "ipv6.hopopts.len_oct",
+            "protocol_dependency": "ipv6",
+            "description": "Length"
+        },
+        {
+            "field": "tcp.srcport",
+            "protocol_dependency": "tcp",
+            "description": "Source Port"
+        },
+        {
+            "field": "tcp.dstport",
+            "protocol_dependency": "tcp",
+            "description": "Destination Port"
+        },
+        {
+            "field": "tcp.port",
+            "protocol_dependency": "tcp",
+            "description": "Source or Destination Port"
+        },
+        {
+            "field": "tcp.stream",
+            "protocol_dependency": "tcp",
+            "description": "Stream index"
+        },
+        {
+            "field": "tcp.completeness",
+            "protocol_dependency": "tcp",
+            "description": "Conversation completeness"
+        },
+        {
+            "field": "tcp.completeness.syn",
+            "protocol_dependency": "tcp",
+            "description": "SYN"
+        },
+        {
+            "field": "tcp.completeness.syn-ack",
+            "protocol_dependency": "tcp",
+            "description": "SYN-ACK"
+        },
+        {
+            "field": "tcp.completeness.ack",
+            "protocol_dependency": "tcp",
+            "description": "ACK"
+        },
+        {
+            "field": "tcp.completeness.data",
+            "protocol_dependency": "tcp",
+            "description": "Data"
+        },
+        {
+            "field": "tcp.completeness.fin",
+            "protocol_dependency": "tcp",
+            "description": "FIN"
+        },
+        {
+            "field": "tcp.completeness.rst",
+            "protocol_dependency": "tcp",
+            "description": "RST"
+        },
+        {
+            "field": "tcp.completeness.str",
+            "protocol_dependency": "tcp",
+            "description": "Completeness Flags"
+        },
+        {
+            "field": "tcp.seq",
+            "protocol_dependency": "tcp",
+            "description": "Sequence Number"
+        },
+        {
+            "field": "tcp.seq_raw",
+            "protocol_dependency": "tcp",
+            "description": "Sequence Number (raw)"
+        },
+        {
+            "field": "tcp.nxtseq",
+            "protocol_dependency": "tcp",
+            "description": "Next Sequence Number"
+        },
+        {
+            "field": "tcp.ack",
+            "protocol_dependency": "tcp",
+            "description": "Acknowledgment Number"
+        },
+        {
+            "field": "tcp.ack_raw",
+            "protocol_dependency": "tcp",
+            "description": "Acknowledgment number (raw)"
+        },
+        {
+            "field": "tcp.hdr_len",
+            "protocol_dependency": "tcp",
+            "description": "Header Length"
+        },
+        {
+            "field": "tcp.flags",
+            "protocol_dependency": "tcp",
+            "description": "Flags"
+        },
+        {
+            "field": "tcp.flags.res",
+            "protocol_dependency": "tcp",
+            "description": "Reserved"
+        },
+        {
+            "field": "tcp.flags.ae",
+            "protocol_dependency": "tcp",
+            "description": "Accurate ECN"
+        },
+        {
+            "field": "tcp.flags.cwr",
+            "protocol_dependency": "tcp",
+            "description": "Congestion Window Reduced"
+        },
+        {
+            "field": "tcp.flags.ece",
+            "protocol_dependency": "tcp",
+            "description": "ECN-Echo"
+        },
+        {
+            "field": "tcp.flags.urg",
+            "protocol_dependency": "tcp",
+            "description": "Urgent"
+        },
+        {
+            "field": "tcp.flags.ack",
+            "protocol_dependency": "tcp",
+            "description": "Acknowledgment"
+        },
+        {
+            "field": "tcp.flags.push",
+            "protocol_dependency": "tcp",
+            "description": "Push"
+        },
+        {
+            "field": "tcp.flags.reset",
+            "protocol_dependency": "tcp",
+            "description": "Reset"
+        },
+        {
+            "field": "tcp.flags.syn",
+            "protocol_dependency": "tcp",
+            "description": "Syn"
+        },
+        {
+            "field": "tcp.flags.fin",
+            "protocol_dependency": "tcp",
+            "description": "Fin"
+        },
+        {
+            "field": "tcp.flags.str",
+            "protocol_dependency": "tcp",
+            "description": "TCP Flags"
+        },
+        {
+            "field": "tcp.window_size_value",
+            "protocol_dependency": "tcp",
+            "description": "Window"
+        },
+        {
+            "field": "tcp.window_size",
+            "protocol_dependency": "tcp",
+            "description": "Calculated window size"
+        },
+        {
+            "field": "tcp.window_size_scalefactor",
+            "protocol_dependency": "tcp",
+            "description": "Window size scaling factor"
+        },
+        {
+            "field": "tcp.checksum",
+            "protocol_dependency": "tcp",
+            "description": "Checksum"
+        },
+        {
+            "field": "tcp.checksum.status",
+            "protocol_dependency": "tcp",
+            "description": "Checksum Status"
+        },
+        {
+            "field": "tcp.analysis",
+            "protocol_dependency": "tcp",
+            "description": "SEQ/ACK analysis"
+        },
+        {
+            "field": "tcp.analysis.flags",
+            "protocol_dependency": "tcp",
+            "description": "TCP Analysis Flags"
+        },
+        {
+            "field": "tcp.analysis.duplicate_ack",
+            "protocol_dependency": "tcp",
+            "description": "Duplicate ACK"
+        },
+        {
+            "field": "tcp.analysis.duplicate_ack_num",
+            "protocol_dependency": "tcp",
+            "description": "Duplicate ACK #"
+        },
+        {
+            "field": "tcp.analysis.duplicate_ack_frame",
+            "protocol_dependency": "tcp",
+            "description": "Duplicate to the ACK in frame"
+        },
+        {
+            "field": "tcp.len",
+            "protocol_dependency": "tcp",
+            "description": "TCP Segment Len"
+        },
+        {
+            "field": "tcp.analysis.acks_frame",
+            "protocol_dependency": "tcp",
+            "description": "This is an ACK to the segment in frame"
+        },
+        {
+            "field": "tcp.analysis.bytes_in_flight",
+            "protocol_dependency": "tcp",
+            "description": "Bytes in flight"
+        },
+        {
+            "field": "tcp.analysis.push_bytes_sent",
+            "protocol_dependency": "tcp",
+            "description": "Bytes sent since last PSH flag"
+        },
+        {
+            "field": "tcp.analysis.ack_rtt",
+            "protocol_dependency": "tcp",
+            "description": "The RTT to ACK the segment was"
+        },
+        {
+            "field": "tcp.analysis.initial_rtt",
+            "protocol_dependency": "tcp",
+            "description": "iRTT"
+        },
+        {
+            "field": "tcp.analysis.rto",
+            "protocol_dependency": "tcp",
+            "description": "The RTO for this segment was"
+        },
+        {
+            "field": "tcp.analysis.rto_frame",
+            "protocol_dependency": "tcp",
+            "description": "RTO based on delta from frame"
+        },
+        {
+            "field": "tcp.urgent_pointer",
+            "protocol_dependency": "tcp",
+            "description": "Urgent Pointer"
+        },
+        {
+            "field": "tcp.segment.count",
+            "protocol_dependency": "tcp",
+            "description": "Segment count"
+        },
+        {
+            "field": "tcp.segment",
+            "protocol_dependency": "tcp",
+            "description": "TCP Segment"
+        },
+        {
+            "field": "tcp.segments",
+            "protocol_dependency": "tcp",
+            "description": "Reassembled TCP Segments"
+        },
+        {
+            "field": "tcp.reassembled_in",
+            "protocol_dependency": "tcp",
+            "description": "Reassembled PDU in frame"
+        },
+        {
+            "field": "tcp.reassembled.length",
+            "protocol_dependency": "tcp",
+            "description": "Reassembled TCP length"
+        },
+        {
+            "field": "tcp.reassembled.data",
+            "protocol_dependency": "tcp",
+            "description": "Reassembled TCP Data"
+        },
+        {
+            "field": "tcp.option_kind",
+            "protocol_dependency": "tcp",
+            "description": "Kind"
+        },
+        {
+            "field": "tcp.option_len",
+            "protocol_dependency": "tcp",
+            "description": "Length"
+        },
+        {
+            "field": "tcp.options",
+            "protocol_dependency": "tcp",
+            "description": "TCP Options"
+        },
+        {
+            "field": "tcp.options.mss_val",
+            "protocol_dependency": "tcp",
+            "description": "MSS Value"
+        },
+        {
+            "field": "tcp.options.wscale.shift",
+            "protocol_dependency": "tcp",
+            "description": "Shift count"
+        },
+        {
+            "field": "tcp.options.wscale.multiplier",
+            "protocol_dependency": "tcp",
+            "description": "Multiplier"
+        },
+        {
+            "field": "tcp.options.sack_le",
+            "protocol_dependency": "tcp",
+            "description": "TCP SACK Left Edge"
+        },
+        {
+            "field": "tcp.options.sack_re",
+            "protocol_dependency": "tcp",
+            "description": "TCP SACK Right Edge"
+        },
+        {
+            "field": "tcp.options.sack.count",
+            "protocol_dependency": "tcp",
+            "description": "TCP SACK Count"
+        },
+        {
+            "field": "tcp.options.sack.dsack_le",
+            "protocol_dependency": "tcp",
+            "description": "TCP D-SACK Left Edge"
+        },
+        {
+            "field": "tcp.options.sack.dsack_re",
+            "protocol_dependency": "tcp",
+            "description": "TCP D-SACK Right Edge"
+        },
+        {
+            "field": "tcp.options.timestamp.tsval",
+            "protocol_dependency": "tcp",
+            "description": "Timestamp value"
+        },
+        {
+            "field": "tcp.options.timestamp.tsecr",
+            "protocol_dependency": "tcp",
+            "description": "Timestamp echo reply"
+        },
+        {
+            "field": "tcp.pdu.size",
+            "protocol_dependency": "tcp",
+            "description": "PDU Size"
+        },
+        {
+            "field": "tcp.time_relative",
+            "protocol_dependency": "tcp",
+            "description": "Time since first frame in this TCP stream"
+        },
+        {
+            "field": "tcp.time_delta",
+            "protocol_dependency": "tcp",
+            "description": "Time since previous frame in this TCP stream"
+        },
+        {
+            "field": "tcp.segment_data",
+            "protocol_dependency": "tcp",
+            "description": "TCP segment data"
+        },
+        {
+            "field": "tcp.payload",
+            "protocol_dependency": "tcp",
+            "description": "TCP payload"
+        },
+        {
+            "field": "tcp.analysis.retransmission",
+            "protocol_dependency": "tcp",
+            "description": "This frame is a (suspected) retransmission"
+        },
+        {
+            "field": "tcp.analysis.fast_retransmission",
+            "protocol_dependency": "tcp",
+            "description": "This frame is a (suspected) fast retransmission"
+        },
+        {
+            "field": "tcp.analysis.spurious_retransmission",
+            "protocol_dependency": "tcp",
+            "description": "This frame is a (suspected) spurious retransmission"
+        },
+        {
+            "field": "tcp.analysis.out_of_order",
+            "protocol_dependency": "tcp",
+            "description": "This frame is a (suspected) out-of-order segment"
+        },
+        {
+            "field": "tcp.analysis.reused_ports",
+            "protocol_dependency": "tcp",
+            "description": "A new tcp session is started with the same ports as an earlier session in this trace"
+        },
+        {
+            "field": "tcp.analysis.lost_segment",
+            "protocol_dependency": "tcp",
+            "description": "Previous segment(s) not captured (common at capture start)"
+        },
+        {
+            "field": "tcp.analysis.ack_lost_segment",
+            "protocol_dependency": "tcp",
+            "description": "ACKed segment that wasn't captured (common at capture start)"
+        },
+        {
+            "field": "tcp.analysis.window_update",
+            "protocol_dependency": "tcp",
+            "description": "TCP window update"
+        },
+        {
+            "field": "tcp.analysis.keep_alive",
+            "protocol_dependency": "tcp",
+            "description": "TCP keep-alive segment"
+        },
+        {
+            "field": "tcp.analysis.keep_alive_ack",
+            "protocol_dependency": "tcp",
+            "description": "ACK to a TCP keep-alive segment"
+        },
+        {
+            "field": "tcp.connection.fin_active",
+            "protocol_dependency": "tcp",
+            "description": "This frame initiates the connection closing"
+        },
+        {
+            "field": "tcp.connection.fin_passive",
+            "protocol_dependency": "tcp",
+            "description": "This frame undergoes the connection closing"
+        },
+        {
+            "field": "tcp.options.sack.dsack",
+            "protocol_dependency": "tcp",
+            "description": "D-SACK Sequence"
+        },
+        {
+            "field": "tcp.options.sack_perm.absent",
+            "protocol_dependency": "tcp",
+            "description": "The SYN packet does not contain a SACK PERM option"
+        },
+        {
+            "field": "tcp.connection.synack",
+            "protocol_dependency": "tcp",
+            "description": "Connection establish acknowledge (SYN+ACK)"
+        },
+        {
+            "field": "tcp.connection.syn",
+            "protocol_dependency": "tcp",
+            "description": "Connection establish request (SYN)"
+        },
+        {
+            "field": "tcp.connection.fin",
+            "protocol_dependency": "tcp",
+            "description": "Connection finish (FIN)"
+        },
+        {
+            "field": "tcp.connection.rst",
+            "protocol_dependency": "tcp",
+            "description": "Connection reset (RST)"
+        },
+        {
+            "field": "tcp.options.nop",
+            "protocol_dependency": "tcp",
+            "description": "TCP Option - No-Operation (NOP)"
+        },
+        {
+            "field": "tcp.options.timestamp",
+            "protocol_dependency": "tcp",
+            "description": "TCP Option - Timestamps"
+        },
+        {
+            "field": "tcp.options.mss",
+            "protocol_dependency": "tcp",
+            "description": "TCP Option - Maximum segment size"
+        },
+        {
+            "field": "tcp.options.wscale",
+            "protocol_dependency": "tcp",
+            "description": "TCP Option - Window scale"
+        },
+        {
+            "field": "tcp.options.sack_perm",
+            "protocol_dependency": "tcp",
+            "description": "TCP Option - SACK permitted"
+        },
+        {
+            "field": "tcp.options.sack",
+            "protocol_dependency": "tcp",
+            "description": "TCP Option - SACK"
+        },
+        {
+            "field": "udp.srcport",
+            "protocol_dependency": "udp",
+            "description": "Source Port"
+        },
+        {
+            "field": "udp.dstport",
+            "protocol_dependency": "udp",
+            "description": "Destination Port"
+        },
+        {
+            "field": "udp.port",
+            "protocol_dependency": "udp",
+            "description": "Source or Destination Port"
+        },
+        {
+            "field": "udp.stream",
+            "protocol_dependency": "udp",
+            "description": "Stream index"
+        },
+        {
+            "field": "udp.length",
+            "protocol_dependency": "udp",
+            "description": "Length"
+        },
+        {
+            "field": "udp.checksum",
+            "protocol_dependency": "udp",
+            "description": "Checksum"
+        },
+        {
+            "field": "udp.checksum.status",
+            "protocol_dependency": "udp",
+            "description": "Checksum Status"
+        },
+        {
+            "field": "udp.pdu.size",
+            "protocol_dependency": "udp",
+            "description": "PDU Size"
+        },
+        {
+            "field": "udp.time_relative",
+            "protocol_dependency": "udp",
+            "description": "Time since first frame"
+        },
+        {
+            "field": "udp.time_delta",
+            "protocol_dependency": "udp",
+            "description": "Time since previous frame"
+        },
+        {
+            "field": "udp.payload",
+            "protocol_dependency": "udp",
+            "description": "Payload"
+        },
+        {
+            "field": "udp.possible_traceroute",
+            "protocol_dependency": "udp",
+            "description": "Possible traceroute"
+        },
+        {
+            "field": "mqtt.len",
+            "protocol_dependency": "mqtt",
+            "description": "Msg Len"
+        },
+        {
+            "field": "mqtt.hdrflags",
+            "protocol_dependency": "mqtt",
+            "description": "Header Flags"
+        },
+        {
+            "field": "mqtt.msgtype",
+            "protocol_dependency": "mqtt",
+            "description": "Message Type"
+        },
+        {
+            "field": "mqtt.hdr_reserved",
+            "protocol_dependency": "mqtt",
+            "description": "Reserved"
+        },
+        {
+            "field": "mqtt.dupflag",
+            "protocol_dependency": "mqtt",
+            "description": "DUP Flag"
+        },
+        {
+            "field": "mqtt.qos",
+            "protocol_dependency": "mqtt",
+            "description": "QoS Level"
+        },
+        {
+            "field": "mqtt.retain",
+            "protocol_dependency": "mqtt",
+            "description": "Retain"
+        },
+        {
+            "field": "mqtt.conack.flags.reserved",
+            "protocol_dependency": "mqtt",
+            "description": "Reserved"
+        },
+        {
+            "field": "mqtt.conack.flags",
+            "protocol_dependency": "mqtt",
+            "description": "Acknowledge Flags"
+        },
+        {
+            "field": "mqtt.conack.flags.sp",
+            "protocol_dependency": "mqtt",
+            "description": "Session Present"
+        },
+        {
+            "field": "mqtt.conack.val",
+            "protocol_dependency": "mqtt",
+            "description": "Return Code"
+        },
+        {
+            "field": "mqtt.msgid",
+            "protocol_dependency": "mqtt",
+            "description": "Message Identifier"
+        },
+        {
+            "field": "mqtt.topic_len",
+            "protocol_dependency": "mqtt",
+            "description": "Topic Length"
+        },
+        {
+            "field": "mqtt.topic",
+            "protocol_dependency": "mqtt",
+            "description": "Topic"
+        },
+        {
+            "field": "mqtt.username_len",
+            "protocol_dependency": "mqtt",
+            "description": "User Name Length"
+        },
+        {
+            "field": "mqtt.username",
+            "protocol_dependency": "mqtt",
+            "description": "User Name"
+        },
+        {
+            "field": "mqtt.passwd_len",
+            "protocol_dependency": "mqtt",
+            "description": "Password Length"
+        },
+        {
+            "field": "mqtt.passwd",
+            "protocol_dependency": "mqtt",
+            "description": "Password"
+        },
+        {
+            "field": "mqtt.msg",
+            "protocol_dependency": "mqtt",
+            "description": "Message"
+        },
+        {
+            "field": "mqtt.proto_len",
+            "protocol_dependency": "mqtt",
+            "description": "Protocol Name Length"
+        },
+        {
+            "field": "mqtt.protoname",
+            "protocol_dependency": "mqtt",
+            "description": "Protocol Name"
+        },
+        {
+            "field": "mqtt.clientid_len",
+            "protocol_dependency": "mqtt",
+            "description": "Client ID Length"
+        },
+        {
+            "field": "mqtt.clientid",
+            "protocol_dependency": "mqtt",
+            "description": "Client ID"
+        },
+        {
+            "field": "mqtt.ver",
+            "protocol_dependency": "mqtt",
+            "description": "Version"
+        },
+        {
+            "field": "mqtt.conflags",
+            "protocol_dependency": "mqtt",
+            "description": "Connect Flags"
+        },
+        {
+            "field": "mqtt.conflag.uname",
+            "protocol_dependency": "mqtt",
+            "description": "User Name Flag"
+        },
+        {
+            "field": "mqtt.conflag.passwd",
+            "protocol_dependency": "mqtt",
+            "description": "Password Flag"
+        },
+        {
+            "field": "mqtt.conflag.retain",
+            "protocol_dependency": "mqtt",
+            "description": "Will Retain"
+        },
+        {
+            "field": "mqtt.conflag.qos",
+            "protocol_dependency": "mqtt",
+            "description": "QoS Level"
+        },
+        {
+            "field": "mqtt.conflag.willflag",
+            "protocol_dependency": "mqtt",
+            "description": "Will Flag"
+        },
+        {
+            "field": "mqtt.conflag.cleansess",
+            "protocol_dependency": "mqtt",
+            "description": "Clean Session Flag"
+        },
+        {
+            "field": "mqtt.conflag.reserved",
+            "protocol_dependency": "mqtt",
+            "description": "(Reserved)"
+        },
+        {
+            "field": "mqtt.kalive",
+            "protocol_dependency": "mqtt",
+            "description": "Keep Alive"
+        },
+        {
+            "field": "mqtt.connack.reason_code",
+            "protocol_dependency": "mqtt",
+            "description": "Reason Code"
+        },
+        {
+            "field": "mqtt.unknown_version",
+            "protocol_dependency": "mqtt",
+            "description": "Unknown version (missing the CONNECT packet?)"
+        },
+        {
+            "field": "coap.length",
+            "protocol_dependency": "coap",
+            "description": "Length"
+        },
+        {
+            "field": "coap.version",
+            "protocol_dependency": "coap",
+            "description": "Version"
+        },
+        {
+            "field": "coap.type",
+            "protocol_dependency": "coap",
+            "description": "Type"
+        },
+        {
+            "field": "coap.token_len",
+            "protocol_dependency": "coap",
+            "description": "Token Length"
+        },
+        {
+            "field": "coap.token",
+            "protocol_dependency": "coap",
+            "description": "Token"
+        },
+        {
+            "field": "coap.mid",
+            "protocol_dependency": "coap",
+            "description": "Message ID"
+        },
+        {
+            "field": "coap.code",
+            "protocol_dependency": "coap",
+            "description": "Code"
+        },
+        {
+            "field": "coap.payload",
+            "protocol_dependency": "coap",
+            "description": "Payload"
+        },
+        {
+            "field": "coap.payload_desc",
+            "protocol_dependency": "coap",
+            "description": "Payload Desc"
+        },
+        {
+            "field": "coap.payload_length",
+            "protocol_dependency": "coap",
+            "description": "Payload Length"
+        },
+        {
+            "field": "coap.opt.name",
+            "protocol_dependency": "coap",
+            "description": "Opt Name"
+        },
+        {
+            "field": "coap.opt.desc",
+            "protocol_dependency": "coap",
+            "description": "Opt Desc"
+        },
+        {
+            "field": "coap.opt.delta",
+            "protocol_dependency": "coap",
+            "description": "Opt Delta"
+        },
+        {
+            "field": "coap.opt.delta_ext",
+            "protocol_dependency": "coap",
+            "description": "Opt Delta extended"
+        },
+        {
+            "field": "coap.opt.length",
+            "protocol_dependency": "coap",
+            "description": "Opt Length"
+        },
+        {
+            "field": "coap.opt.length_ext",
+            "protocol_dependency": "coap",
+            "description": "Opt Length extended"
+        },
+        {
+            "field": "coap.opt.end_marker",
+            "protocol_dependency": "coap",
+            "description": "End of options marker"
+        },
+        {
+            "field": "coap.opt.ctype",
+            "protocol_dependency": "coap",
+            "description": "Content-type"
+        },
+        {
+            "field": "coap.opt.max_age",
+            "protocol_dependency": "coap",
+            "description": "Max-age"
+        },
+        {
+            "field": "coap.opt.uri_host",
+            "protocol_dependency": "coap",
+            "description": "Uri-Host"
+        },
+        {
+            "field": "coap.opt.location_path",
+            "protocol_dependency": "coap",
+            "description": "Location-Path"
+        },
+        {
+            "field": "coap.opt.uri_port",
+            "protocol_dependency": "coap",
+            "description": "Uri-Port"
+        },
+        {
+            "field": "coap.opt.uri_path",
+            "protocol_dependency": "coap",
+            "description": "Uri-Path"
+        },
+        {
+            "field": "coap.opt.uri_path_recon",
+            "protocol_dependency": "coap",
+            "description": "Uri-Path"
+        },
+        {
+            "field": "coap.opt.observe",
+            "protocol_dependency": "coap",
+            "description": "Observe"
+        },
+        {
+            "field": "coap.opt.accept",
+            "protocol_dependency": "coap",
+            "description": "Accept"
+        },
+        {
+            "field": "coap.opt.block_size",
+            "protocol_dependency": "coap",
+            "description": "Encoded Block Size"
+        },
+        {
+            "field": "coap.opt.unknown",
+            "protocol_dependency": "coap",
+            "description": "Unknown"
+        },
+        {
+            "field": "coap.unknown_option_number",
+            "protocol_dependency": "coap",
+            "description": "Unknown Option Number"
+        },
+        {
+            "field": "coap.invalid_option_range",
+            "protocol_dependency": "coap",
+            "description": "Invalid Option Range"
+        },
+        {
+            "field": "coap.option_length_bad",
+            "protocol_dependency": "coap",
+            "description": "Option length bad"
+        },
+        {
+            "field": "rtcp.version",
+            "protocol_dependency": "rtcp",
+            "description": "Version"
+        },
+        {
+            "field": "rtcp.padding",
+            "protocol_dependency": "rtcp",
+            "description": "Padding"
+        },
+        {
+            "field": "rtcp.rc",
+            "protocol_dependency": "rtcp",
+            "description": "Reception report count"
+        },
+        {
+            "field": "rtcp.sc",
+            "protocol_dependency": "rtcp",
+            "description": "Source count"
+        },
+        {
+            "field": "rtcp.pt",
+            "protocol_dependency": "rtcp",
+            "description": "Packet type"
+        },
+        {
+            "field": "rtcp.length",
+            "protocol_dependency": "rtcp",
+            "description": "Length"
+        },
+        {
+            "field": "rtcp.senderssrc",
+            "protocol_dependency": "rtcp",
+            "description": "Sender SSRC"
+        },
+        {
+            "field": "rtcp.mediassrc",
+            "protocol_dependency": "rtcp",
+            "description": "Media source SSRC"
+        },
+        {
+            "field": "rtcp.timestamp.ntp.msw",
+            "protocol_dependency": "rtcp",
+            "description": "Timestamp, MSW"
+        },
+        {
+            "field": "rtcp.timestamp.ntp.lsw",
+            "protocol_dependency": "rtcp",
+            "description": "Timestamp, LSW"
+        },
+        {
+            "field": "rtcp.timestamp.ntp",
+            "protocol_dependency": "rtcp",
+            "description": "MSW and LSW as NTP timestamp"
+        },
+        {
+            "field": "rtcp.timestamp.rtp",
+            "protocol_dependency": "rtcp",
+            "description": "RTP timestamp"
+        },
+        {
+            "field": "rtcp.sender.packetcount",
+            "protocol_dependency": "rtcp",
+            "description": "Sender's packet count"
+        },
+        {
+            "field": "rtcp.sender.octetcount",
+            "protocol_dependency": "rtcp",
+            "description": "Sender's octet count"
+        },
+        {
+            "field": "rtcp.ssrc.identifier",
+            "protocol_dependency": "rtcp",
+            "description": "Identifier"
+        },
+        {
+            "field": "rtcp.ssrc.fraction",
+            "protocol_dependency": "rtcp",
+            "description": "Fraction lost"
+        },
+        {
+            "field": "rtcp.ssrc.cum_nr",
+            "protocol_dependency": "rtcp",
+            "description": "Cumulative number of packets lost"
+        },
+        {
+            "field": "rtcp.ssrc.ext_high",
+            "protocol_dependency": "rtcp",
+            "description": "Extended highest sequence number received"
+        },
+        {
+            "field": "rtcp.ssrc.high_seq",
+            "protocol_dependency": "rtcp",
+            "description": "Highest sequence number received"
+        },
+        {
+            "field": "rtcp.ssrc.high_cycles",
+            "protocol_dependency": "rtcp",
+            "description": "Sequence number cycles count"
+        },
+        {
+            "field": "rtcp.ssrc.jitter",
+            "protocol_dependency": "rtcp",
+            "description": "Interarrival jitter"
+        },
+        {
+            "field": "rtcp.ssrc.lsr",
+            "protocol_dependency": "rtcp",
+            "description": "Last SR timestamp"
+        },
+        {
+            "field": "rtcp.ssrc.dlsr",
+            "protocol_dependency": "rtcp",
+            "description": "Delay since last SR timestamp"
+        },
+        {
+            "field": "rtcp.sdes.type",
+            "protocol_dependency": "rtcp",
+            "description": "Type"
+        },
+        {
+            "field": "rtcp.sdes.length",
+            "protocol_dependency": "rtcp",
+            "description": "Length"
+        },
+        {
+            "field": "rtcp.sdes.text",
+            "protocol_dependency": "rtcp",
+            "description": "Text"
+        },
+        {
+            "field": "rtcp.app.subtype",
+            "protocol_dependency": "rtcp",
+            "description": "Subtype"
+        },
+        {
+            "field": "rtcp.profile-specific-extension.type",
+            "protocol_dependency": "rtcp",
+            "description": "Extension Type"
+        },
+        {
+            "field": "rtcp.profile-specific-extension.length",
+            "protocol_dependency": "rtcp",
+            "description": "Extension Length"
+        },
+        {
+            "field": "rtcp.profile-specific-extension",
+            "protocol_dependency": "rtcp",
+            "description": "Profile-specific extension"
+        },
+        {
+            "field": "rtcp.setup-frame",
+            "protocol_dependency": "rtcp",
+            "description": "Setup frame"
+        },
+        {
+            "field": "rtcp.setup-method",
+            "protocol_dependency": "rtcp",
+            "description": "Setup Method"
+        },
+        {
+            "field": "rtcp.length_check",
+            "protocol_dependency": "rtcp",
+            "description": "RTCP frame length check"
+        },
+        {
+            "field": "rtcp.psfb.fmt",
+            "protocol_dependency": "rtcp",
+            "description": "RTCP Feedback message type (FMT)"
+        },
+        {
+            "field": "rtcp.psfb.fir.sli.first",
+            "protocol_dependency": "rtcp",
+            "description": "First MB"
+        },
+        {
+            "field": "rtcp.psfb.fir.sli.number",
+            "protocol_dependency": "rtcp",
+            "description": "Number of MBs"
+        },
+        {
+            "field": "rtcp.psfb.fir.sli.picture_id",
+            "protocol_dependency": "rtcp",
+            "description": "Picture ID"
+        },
+        {
+            "field": "rtcp.bye_reason_not_padded",
+            "protocol_dependency": "rtcp",
+            "description": "Reason string is not NULL padded (see RFC3550, section 6.6)"
+        },
+        {
+            "field": "rtcp.length_check.bad",
+            "protocol_dependency": "rtcp",
+            "description": "Incorrect RTCP packet length information (expected %u bytes, found %d)"
+        },
+        {
+            "field": "rtcp.appl.not_ascii",
+            "protocol_dependency": "rtcp",
+            "description": "Application name is not a string"
+        }
+    ]
+}
