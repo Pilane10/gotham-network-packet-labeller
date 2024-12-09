@@ -28,18 +28,33 @@ Before running the pipeline, ensure you have the following installed:
 
 The pipeline expects the following directory structure:
 ```
-    ├── Makefile
-    ├── README.md
-    ├── scripts/
-    │   ├── python/
-    │   │   ├── extract_features.py
-    │   │   ├── clean_features.py
-    │   │   └── labeller.py
+    ├── bash_scripts/
     ├── data/
     │   ├── raw/                     # Raw network traffic data (input)
     │   ├── extracted_features/      # Extracted features (output from feature extraction)
     │   ├── cleaned_features/        # Cleaned features (output from feature cleaning)
     │   └── labeled_data/            # Labeled data (output from labelling)
+    ├── features/
+    ├── images/
+    ├── metadata/
+    ├── notebooks/
+    ├── scripts/
+    │   ├── run_cleaning.py
+    │   ├── run_extraction.py
+    │   └── run_labelling.py
+    ├── src/
+    │   ├── __init__.py
+    │   ├── feature_cleaner.py
+    │   ├── feature_extractor.py
+    │   ├── labeller.py
+    │   └── utils.py
+    ├── venv/
+    ├── .dockerignore
+    ├── .gitignore
+    ├── Dockerfile
+    ├── Makefile
+    ├── README.md
+    └── requirements.txt
 ```
 
 ## **Pipeline Tasks**
