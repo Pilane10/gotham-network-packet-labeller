@@ -4,7 +4,8 @@ import gc
 import glob
 import pandas as pd
 
-from src.feature_cleaner import FeatureCleaner
+from src.helpers.feature_cleaner import FeatureCleaner
+from src import *
 
 
 def process_local_datasets(iot_devices):
@@ -23,23 +24,30 @@ def process_local_datasets(iot_devices):
     # Iterate over each IoT device
     for iot_device in iot_devices:
         # Get the list of file paths for normal and malicious data for the device
-        m_filenames = [f for f in glob.glob(f"../data/extracted_features/malicious/*/{iot_device}_*.csv") if 'mirai-dos' in f]
-        b_filenames = glob.glob(f"../data/extracted_features/normal/{iot_device}_*.csv")
-        b_filenames = []
-    
+        m_filenames = glob.glob(
+            os.path.join(
+                DATA_DIR, "extracted_features", "malicious", "*", f"{iot_device}*.csv"
+            )
+        )
+        b_filenames = glob.glob(
+            os.path.join(DATA_DIR, "extracted_features", "normal", f"{iot_device}*.csv")
+        )
+
         # Read and concatenate the chunks from all the files associated with the device
         processed_chunks = []
         for filename in b_filenames + m_filenames:
             # Read each file in chunks to optimize memory usage
-            for chunk in pd.read_csv(filename, sep="\t", low_memory=False, chunksize=10000):
+            for chunk in pd.read_csv(
+                filename, sep="\t", low_memory=False, chunksize=10000
+            ):
                 processed_chunks.append(chunk)
 
         if processed_chunks == []:
             continue
-            
+
         # Concatenate all the chunks into a single DataFrame
         df = pd.concat(processed_chunks)
-        
+
         # Perform local cleaning (e.g., handling missing values, transforming features, etc.)
         feature_cleaner = FeatureCleaner()
         df_cleaned = feature_cleaner.clean_features(df)
@@ -110,8 +118,12 @@ def save_cleaned_data(cleaned_data, output_dir):
 
 if __name__ == "__main__":
     # Define paths to local datasets
-    benign_filenames = glob.glob("../data/extracted_features/normal/*.csv")
-    iot_devices = list(set([re.search(r"([a-zA-Z\-]+)-([0-9]+)", f).group(0) for f in benign_filenames]))
+    benign_filenames = os.path.join(DATA_DIR, "extracted_features", "normal", "*.csv")
+    iot_devices = list(
+        set(
+            [re.search(r"([a-zA-Z\-]+)-([0-9]+)", f).group(0) for f in benign_filenames]
+        )
+    )
 
     # Step 1: Process each device's dataset locally
     feature_info = process_local_datasets(iot_devices)

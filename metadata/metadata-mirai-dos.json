@@ -25,6 +25,18 @@
     {
         "source_ip": "192.168.20.10",
         "destination_ip": "192.168.18.18",
+        "protocol": "1",
+        "label": "Mirai UDP Flooding"
+    },
+    {
+        "source_ip": "192.168.18.18",
+        "destination_ip": "192.168.20.10",
+        "protocol": "1",
+        "label": "Mirai UDP Flooding"
+    },
+    {
+        "source_ip": "192.168.20.10",
+        "destination_ip": "192.168.18.18",
         "protocol": "6",
         "label": "Mirai TCP Flooding"
     },
@@ -62,6 +74,18 @@
     {
         "source_ip": "192.168.17.10",
         "destination_ip": "192.168.18.10",
+        "protocol": "1",
+        "label": "Mirai UDP Flooding"
+    },
+    {
+        "source_ip": "192.168.18.10",
+        "destination_ip": "192.168.17.10",
+        "protocol": "1",
+        "label": "Mirai UDP Flooding"
+    },
+    {
+        "source_ip": "192.168.17.10",
+        "destination_ip": "192.168.18.10",
         "protocol": "6",
         "label": "Mirai TCP Flooding"
     },
@@ -94,6 +118,18 @@
         "source_ip": "192.168.18.15",
         "destination_ip": "192.168.17.15",
         "protocol": "17",
+        "label": "Mirai UDP Flooding"
+    },
+    {
+        "source_ip": "192.168.17.15",
+        "destination_ip": "192.168.18.15",
+        "protocol": "1",
+        "label": "Mirai UDP Flooding"
+    },
+    {
+        "source_ip": "192.168.18.15",
+        "destination_ip": "192.168.17.15",
+        "protocol": "1",
         "label": "Mirai UDP Flooding"
     },
     {

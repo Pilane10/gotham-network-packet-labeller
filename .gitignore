@@ -164,6 +164,3 @@ cython_debug/
 
 data/
 img/
-_bin/
-_scripts/
-_src/

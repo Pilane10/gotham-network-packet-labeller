@@ -3,7 +3,9 @@ import pandas as pd
 
 
 class PCAPReader:
-    def __init__(self, pcap_path, feature_vector, tool, tshark_path, zeek_path):
+    def __init__(
+        self, pcap_path, feature_vector, tool, tshark_path, zeek_path, filters
+    ):
         """
         Initializes the feature extraction process.
 
@@ -17,12 +19,14 @@ class PCAPReader:
         self.tool = tool
         self.tshark_path = tshark_path
         self.zeek_path = zeek_path
+        self.filters = filters
+
         self.dataframe = None  # Will store the extracted DataFrame
-        
+
     def to_dataframe(self):
         """
         Extracts features from the pcap file and returns them as a DataFrame.
-        
+
         Returns:
             pd.DataFrame: DataFrame containing the extracted features.
         """
@@ -32,29 +36,40 @@ class PCAPReader:
 
         tshark_command = [
             self.tshark_path,
-            "-n",                     # No DNS resolution (speeds up processing)
-            "-r", self.pcap_path,     # Input pcap file
-            "-T", "fields",           # Output in field format
-            *fields,                  # Include all requested fields
-            '-E', 'header=y',         # Add column headers
-            "-E", "separator=\t",     # Use Tab as CSV delimiter
-            '-E', 'occurrence=f',     # First occurrence of repeated fields
+            "-n",  # No DNS resolution (speeds up processing)
+            "-r",
+            self.pcap_path,  # Input pcap file
+            "-T",
+            "fields",  # Output in field format
+            *fields,  # Include all requested fields
+            "-E",
+            "header=y",  # Add column headers
+            "-E",
+            "separator=\t",  # Use Tab as CSV delimiter
+            "-E",
+            "occurrence=f",  # First occurrence of repeated fields
+            "-Y",
+            self.filters,
         ]
-        
+
         try:
             # Run the tshark command and capture the output
-            result = subprocess.run(tshark_command, capture_output=True, text=True, check=True)
-            
+            result = subprocess.run(
+                tshark_command, capture_output=True, text=True, check=True
+            )
+
             # Convert the output to a list of lists
             data = [line.split("\t") for line in result.stdout.strip().split("\n")]
-            
+
             # Create a DataFrame from the data
             self.dataframe = pd.DataFrame(data, columns=self.feature_vector)
             return self.dataframe
-        
+
         except subprocess.CalledProcessError as e:
             print(f"Error executing tshark: {e}")
-            print("Ensure that tshark is correctly installed and accessible from the specified path.")
+            print(
+                "Ensure that tshark is correctly installed and accessible from the specified path."
+            )
             return None
 
     def to_csv(self, output_file):
@@ -70,21 +85,30 @@ class PCAPReader:
 
         tshark_command = [
             self.tshark_path,
-            "-n",                     # No DNS resolution (speeds up processing)
-            "-r", self.pcap_path,     # Input pcap file
-            "-T", "fields",           # Output in field format
-            *fields,                  # Include all requested fields
-            '-E', 'header=y',         # Add column headers
-            "-E", "separator=\t",     # Use Tab as CSV delimiter
-            '-E', 'occurrence=f',     # First occurrence of repeated fields
+            "-n",  # No DNS resolution (speeds up processing)
+            "-r",
+            self.pcap_path,  # Input pcap file
+            "-T",
+            "fields",  # Output in field format
+            *fields,  # Include all requested fields
+            "-E",
+            "header=y",  # Add column headers
+            "-E",
+            "separator=\t",  # Use Tab as CSV delimiter
+            "-E",
+            "occurrence=f",  # First occurrence of repeated fields
+            "-Y",
+            self.filters,
         ]
-        
+
         try:
-            with open(output_file, 'w') as out:
+            with open(output_file, "w") as out:
                 subprocess.run(tshark_command, stdout=out)
 
             print(f"tshark parsing complete. File saved as: {output_file}")
         except subprocess.CalledProcessError as e:
             print(f"Error executing tshark: {e}")
-            print("Ensure that tshark is correctly installed and accessible from the specified path.")
+            print(
+                "Ensure that tshark is correctly installed and accessible from the specified path."
+            )
             return None

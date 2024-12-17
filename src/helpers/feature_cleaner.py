@@ -3,8 +3,14 @@ from sklearn.feature_selection import VarianceThreshold
 
 
 class FeatureCleaner:
-    def __init__(self, variance_threshold=0.01, correlation_threshold=0.9, missing_threshold=1.0,
-                 num_replacement=-1, cat_replacement="unknown"):
+    def __init__(
+        self,
+        variance_threshold=0.01,
+        correlation_threshold=0.9,
+        missing_threshold=1.0,
+        num_replacement=-1,
+        cat_replacement="unknown",
+    ):
         """
         Initializes the FeatureCleaner with configurable thresholds and replacement values.
 
@@ -69,8 +75,14 @@ class FeatureCleaner:
         """
         numerical_df = df.select_dtypes(include=["number"])
         corr_matrix = numerical_df.corr().abs()
-        upper_triangle = corr_matrix.where(np.triu(np.ones(corr_matrix.shape), k=1).astype(bool))
-        to_drop = [column for column in upper_triangle.columns if any(upper_triangle[column] > self.correlation_threshold)]
+        upper_triangle = corr_matrix.where(
+            np.triu(np.ones(corr_matrix.shape), k=1).astype(bool)
+        )
+        to_drop = [
+            column
+            for column in upper_triangle.columns
+            if any(upper_triangle[column] > self.correlation_threshold)
+        ]
         return df.drop(columns=to_drop)
 
     def handle_missing_values(self, df):
@@ -89,7 +101,7 @@ class FeatureCleaner:
     def clean_features(self, df):
         """
         Full feature cleaning pipeline: applies multiple cleaning steps to the input DataFrame.
-        
+
         The pipeline includes:
         1. Handling missing values by removing columns with too many missing values.
         2. Replacing missing values with specified replacements.

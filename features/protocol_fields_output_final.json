@@ -1,0 +1,114 @@
+{
+    "features": [
+        {
+            "field": "frame.time",
+            "protocol_dependency": "frame",
+            "description": "Arrival Time"
+        },
+        {
+            "field": "frame.len",
+            "protocol_dependency": "frame",
+            "description": "Frame length on the wire"
+        },
+        {
+            "field": "frame.protocols",
+            "protocol_dependency": "frame",
+            "description": "Protocols in frame"
+        },
+        {
+            "field": "eth.src",
+            "protocol_dependency": "eth",
+            "description": "Source"
+        },
+        {
+            "field": "eth.dst",
+            "protocol_dependency": "eth",
+            "description": "Destination"
+        },
+        {
+            "field": "ip.dst",
+            "protocol_dependency": "ip",
+            "description": "Destination Address"
+        },
+        {
+            "field": "ip.src",
+            "protocol_dependency": "ip",
+            "description": "Source Address"
+        },
+        {
+            "field": "ip.flags",
+            "protocol_dependency": "ip",
+            "description": "Flags"
+        },
+        {
+            "field": "ip.ttl",
+            "protocol_dependency": "ip",
+            "description": "Time to Live"
+        },
+        {
+            "field": "ip.proto",
+            "protocol_dependency": "ip",
+            "description": "Protocol"
+        },
+        {
+            "field": "ip.checksum",
+            "protocol_dependency": "ip",
+            "description": "Header Checksum"
+        },
+        {
+            "field": "ip.tos",
+            "protocol_dependency": "ip",
+            "description": "Type of Service"
+        },
+        {
+            "field": "tcp.srcport",
+            "protocol_dependency": "tcp",
+            "description": "Source Port"
+        },
+        {
+            "field": "tcp.dstport",
+            "protocol_dependency": "tcp",
+            "description": "Destination Port"
+        },
+        {
+            "field": "tcp.flags",
+            "protocol_dependency": "tcp",
+            "description": "Flags"
+        },
+        {
+            "field": "tcp.window_size_value",
+            "protocol_dependency": "tcp",
+            "description": "Window"
+        },
+        {
+            "field": "tcp.window_size_scalefactor",
+            "protocol_dependency": "tcp",
+            "description": "Window size scaling factor"
+        },
+        {
+            "field": "tcp.checksum",
+            "protocol_dependency": "tcp",
+            "description": "Checksum"
+        },
+        {
+            "field": "tcp.options",
+            "protocol_dependency": "tcp",
+            "description": "TCP Options"
+        },
+        {
+            "field": "tcp.pdu.size",
+            "protocol_dependency": "tcp",
+            "description": "PDU Size"
+        },
+        {
+            "field": "udp.srcport",
+            "protocol_dependency": "udp",
+            "description": "Source Port"
+        },
+        {
+            "field": "udp.dstport",
+            "protocol_dependency": "udp",
+            "description": "Destination Port"
+        }
+    ]
+}

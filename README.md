@@ -74,19 +74,19 @@ You can run each stage of the pipeline individually using the Makefile. This all
 
 - Feature Extraction:
     ``` bash
-        make extract_features
+    make extract_features
     ```
     This will extract features from raw network traffic data.
 
 - Feature Cleaning:
     ``` bash
-        make clean_features
+    make clean_features
     ```
     This will clean and preprocess the extracted feature datasets.
 
 - Data Labelling:
     ``` bash
-        make label_data
+    make label_data
     ```
     This will label the cleaned datasets with appropriate attack/benign classifications.
 
@@ -94,7 +94,7 @@ You can run each stage of the pipeline individually using the Makefile. This all
 
 To run all stages in sequence, execute the following command:
 ```bash
-    pip install -r requirements.txt
+pip install -r requirements.txt
 ```
 
 This will run feature extraction, feature cleaning, and data labelling one after the other, automating the entire pipeline.
