@@ -1,6 +1,6 @@
-# IoT Dataset Processing Pipeline
+# GothamDataset2025 Processing Pipeline
 
-This repository contains a pipeline for processing IoT network traffic datasets, including **feature extraction**, **feature cleaning**, and **data labelling**. The pipeline is designed for extensibility and reproducibility.
+This repository contains a pipeline for processing the Gotham network traffic dataset, including **feature extraction**, **feature cleaning**, and **data labelling**. The pipeline is designed for extensibility and reproducibility.
 
 ---
 
@@ -94,7 +94,7 @@ You can run each stage of the pipeline individually using the Makefile. This all
 
 To run all stages in sequence, execute the following command:
 ```bash
-pip install -r requirements.txt
+make run_pipeline
 ```
 
 This will run feature extraction, feature cleaning, and data labelling one after the other, automating the entire pipeline.
