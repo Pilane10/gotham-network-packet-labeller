@@ -20,7 +20,7 @@ def process_pcap_directory(input_dir, output_dir, features, is_malicious=False):
                     # Correct output directory path by appending the relative directory structure
                     output_subdir = os.path.join(output_dir, rel_dir)
                 else:
-                    # Normal traffic does not have subfolders
+                    # Benign traffic does not have subfolders
                     output_subdir = output_dir
 
                 os.makedirs(output_subdir, exist_ok=True)
@@ -28,15 +28,17 @@ def process_pcap_directory(input_dir, output_dir, features, is_malicious=False):
                 # Set output file path in the correct subdirectory
                 output_file = os.path.join(output_subdir, file.replace(".pcap", ".csv"))
 
-                normal_metadata_path = os.path.join(
-                    METADATA_DIR, "metadata-normal.json"
+                benign_metadata_path = os.path.join(
+                    METADATA_DIR, "metadata-benign.json"
                 )
-                normal_metadata = load_json_file(normal_metadata_path)
+                benign_metadata = load_json_file(benign_metadata_path)
 
                 match = re.match(r"([a-zA-Z\-]+)-([0-9]+)", file)
                 device_name, device_number_str = match.group(1), match.group(2)
                 device_number = int(device_number_str) - 1
-                device_info = normal_metadata.get(device_name, [])
+                device_info = benign_metadata.get(device_name, [])
+                print(device_name)
+                print(device_info)
                 device_ip_address = device_info.get("device_ip", [])[device_number]
 
                 filters = f"ip.addr == {device_ip_address}"
@@ -54,26 +56,26 @@ def process_pcap_directory(input_dir, output_dir, features, is_malicious=False):
 
 if __name__ == "__main__":
     # Input directories
-    normal_dir = os.path.join(DATA_DIR, "raw", "normal")
+    benign_dir = os.path.join(DATA_DIR, "raw", "benign")
     malicious_dir = os.path.join(DATA_DIR, "raw", "malicious")
 
     # Output directories
-    output_dir_normal = os.path.join(DATA_DIR, "extracted_features", "normal")
+    output_dir_benign = os.path.join(DATA_DIR, "extracted_features", "benign")
     output_dir_malicious = os.path.join(DATA_DIR, "extracted_features", "malicious")
 
     # Ensure output directories exist
-    os.makedirs(output_dir_normal, exist_ok=True)
+    os.makedirs(output_dir_benign, exist_ok=True)
     os.makedirs(output_dir_malicious, exist_ok=True)
 
     # Load features
-    feature_config = load_json_file("./features/protocol_fields_output_final.json")
+    feature_config = load_json_file("./features/protocol_fields_output.json")
     features_to_extract = feature_config["features"]
     features = [feature["field"] for feature in features_to_extract]
 
-    # Process normal traffic
+    # Process benign traffic
     process_pcap_directory(
-        input_dir=normal_dir,
-        output_dir=output_dir_normal,
+        input_dir=benign_dir,
+        output_dir=output_dir_benign,
         features=features,
         is_malicious=False,
     )

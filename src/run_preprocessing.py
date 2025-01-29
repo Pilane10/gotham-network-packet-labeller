@@ -117,8 +117,10 @@ if __name__ == "__main__":
     )
 
     # Define input and output directories
-    input_dir = "./data/ready"
+    input_dir = "./data/processed"
     output_dir = os.path.join(DATA_DIR, "final")
+
+    os.makedirs(output_dir, exist_ok=True)  # Ensure output directory exists
 
     # Process the CSV files
     process_csv_files(input_dir, output_dir, preprocessor)

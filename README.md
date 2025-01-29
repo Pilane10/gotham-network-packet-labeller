@@ -5,57 +5,35 @@ This repository contains a pipeline for processing the Gotham network traffic da
 ---
 
 ## **Table of Contents**
-1. [Requirements](#requirements)
-2. [Folder Structure](#folder-structure)
-3. [Pipeline Tasks](#pipeline-tasks)
-4. [Usage](#usage)
+1. [Installation](#installation)
+2. [Pipeline Tasks](#pipeline-tasks)
+3. [Usage](#usage)
+4. [Files and Folders Structure](#files-and-folders-structure)
+5. [Requirements](#requirements)
+6. [License](#license)
+7. [Authors](#authors)
 
 ---
 
-## **Requirements**
+## **Installation**
 
-Before running the pipeline, ensure you have the following installed:
-
-- **Python 3.8+**
-- Required Python packages (install using `requirements.txt`):
+* Before running the pipeline, ensure you have **Python 3.8+** and **Tshark 4.2.2** golbally installed in your computer;*. If not, you can get python [here]() and tshark [here]().
+* Then, clone the repository to your PC:
     ```bash
-    pip install -r requirements.txt
+        $ git clone https://github.com/othmbela/gotham-network-packet-labeller.git
     ```
-- Make (for managing the pipeline tasks).
+* ### Dependencies
+    1. cd into your cloned repository as such:
+        ```bash
+            $ cd gotham-network-packet-labeller
+        ```
+    2. Initialise the project as such:
+        ```bash
+            $ make init
+        ```
+    First, the command line will create your vcirtual environment and install the dependencies needed to run the app. Then, it will create the data folders.
+    3. Move the GothamDataset2025 to the ./data/raw folder.
 
-
-## **Folder Structure**
-
-The pipeline expects the following directory structure:
-```
-    ├── bash_scripts/
-    ├── data/
-    │   ├── raw/                     # Raw network traffic data (input)
-    │   ├── extracted_features/      # Extracted features (output from feature extraction)
-    │   ├── cleaned_features/        # Cleaned features (output from feature cleaning)
-    │   └── labeled_data/            # Labeled data (output from labelling)
-    ├── features/
-    ├── images/
-    ├── metadata/
-    ├── notebooks/
-    ├── scripts/
-    │   ├── run_cleaning.py
-    │   ├── run_extraction.py
-    │   └── run_labelling.py
-    ├── src/
-    │   ├── __init__.py
-    │   ├── feature_cleaner.py
-    │   ├── feature_extractor.py
-    │   ├── labeller.py
-    │   └── utils.py
-    ├── venv/
-    ├── .dockerignore
-    ├── .gitignore
-    ├── Dockerfile
-    ├── Makefile
-    ├── README.md
-    └── requirements.txt
-```
 
 ## **Pipeline Tasks**
 
@@ -98,3 +76,54 @@ make run_pipeline
 ```
 
 This will run feature extraction, feature cleaning, and data labelling one after the other, automating the entire pipeline.
+
+
+
+
+## **Files and Folders Structure**
+
+The pipeline expects the following directory structure:
+```
+    ├── bash_scripts/
+    ├── data/
+    │   ├── raw/                     # Raw network traffic data (input)
+    │   ├── extracted_features/      # Extracted features (output from feature extraction)
+    │   ├── cleaned_features/        # Cleaned features (output from feature cleaning)
+    │   └── labeled_data/            # Labeled data (output from labelling)
+    ├── features/
+    ├── images/
+    ├── metadata/
+    ├── notebooks/
+    ├── scripts/
+    │   ├── run_cleaning.py
+    │   ├── run_extraction.py
+    │   └── run_labelling.py
+    ├── src/
+    │   ├── __init__.py
+    │   ├── feature_cleaner.py
+    │   ├── feature_extractor.py
+    │   ├── labeller.py
+    │   └── utils.py
+    ├── venv/
+    ├── .dockerignore
+    ├── .gitignore
+    ├── Dockerfile
+    ├── Makefile
+    ├── README.md
+    └── requirements.txt
+```
+
+
+## Requirements
+
+All the experiments were conducted using a .
+
+
+## License
+
+This project is released under the [Apache 2.0 license](LICENSE)
+
+
+## Authors
+
+**Othmane Belarbi**

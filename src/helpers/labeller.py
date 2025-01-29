@@ -6,17 +6,17 @@ from typing import List, Dict, Tuple
 class Labeller:
     def __init__(
         self,
-        normal_metadata: List[Dict[str, str]],
+        benign_metadata: List[Dict[str, str]],
         malicious_metadata: List[Dict[str, str]],
     ):
         """
-        Initializes the Labeller with normal and malicious metadata.
+        Initializes the Labeller with benign and malicious metadata.
 
         Args:
-            normal_metadata: A dictionary with device names as keys and their metadata as values.
+            benign_metadata: A dictionary with device names as keys and their metadata as values.
             malicious_metadata: A list of dictionaries containing malicious traffic rules.
         """
-        self.normal_metadata = normal_metadata
+        self.benign_metadata = benign_metadata
         self.malicious_metadata = malicious_metadata
 
     @staticmethod
@@ -61,11 +61,11 @@ class Labeller:
         return df[mask]
 
     @staticmethod
-    def label_normal_traffic_by_ip(
+    def label_benign_traffic_by_ip(
         df: pd.DataFrame, device_ip_address: str, device_info
     ) -> pd.DataFrame:
         """
-        Label packets as normal traffic based on server IPs and device IP rules.
+        Label packets as benign traffic based on server IPs and device IP rules.
 
         Args:
             df: Input DataFrame to label.
@@ -73,10 +73,10 @@ class Labeller:
             device_info: Metadata of the IoT device, including server IPs.
 
         Returns:
-            A DataFrame with labeled normal traffic.
+            A DataFrame with labeled benign traffic.
         """
         servers_ip = device_info.get("server_ip", [])
-        label = device_info.get("label", "Normal")
+        label = device_info.get("label", "benign")
 
         for server_ip in servers_ip:
             mask = (
@@ -133,7 +133,7 @@ class Labeller:
             )
 
         # Retrieve device metadata
-        device_info = self.normal_metadata.get(device_name, [])
+        device_info = self.benign_metadata.get(device_name, [])
         if not device_info:
             raise ValueError(f"No metadata found for device '{device_name}'.")
 
@@ -151,8 +151,8 @@ class Labeller:
         # Initialize all labels to "Unknown"
         df["label"] = "Unknown"
 
-        # Label normal and malicious traffic
-        df = self.label_normal_traffic_by_ip(df, device_ip_address, device_info)
+        # Label benign and malicious traffic
+        df = self.label_benign_traffic_by_ip(df, device_ip_address, device_info)
         df = self.label_malicious_traffic_by_ip(df)
 
         return df

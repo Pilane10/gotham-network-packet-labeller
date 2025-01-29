@@ -6,18 +6,18 @@ import gc
 
 from src import *
 
-benign_filenames = glob.glob(os.path.join(DATA_DIR, "labelled", "normal", "*.csv"))
+benign_filenames = glob.glob(os.path.join(DATA_DIR, "labelled", "benign", "*.csv"))
 iot_devices = list(
     set([re.search(r"([a-zA-Z\-]+)-([0-9]+)", f).group(0) for f in benign_filenames])
 )
 
 for iot_device in iot_devices:
-    # Get the list of file paths for normal and malicious data for the device
+    # Get the list of file paths for benign and malicious data for the device
     m_filenames = glob.glob(
         os.path.join(DATA_DIR, "labelled", "malicious", "*", f"{iot_device}*.csv")
     )
     b_filenames = glob.glob(
-        os.path.join(DATA_DIR, "labelled", "normal", f"{iot_device}*.csv")
+        os.path.join(DATA_DIR, "labelled", "benign", f"{iot_device}*.csv")
     )
 
     # Read and concatenate the chunks from all the files associated with the device
@@ -33,7 +33,7 @@ for iot_device in iot_devices:
     # Concatenate all the chunks into a single DataFrame
     df = pd.concat(processed_chunks)
 
-    output_dir = os.path.join(DATA_DIR, "ready")
+    output_dir = os.path.join(DATA_DIR, "processed")
     os.makedirs(output_dir, exist_ok=True)
 
     df.to_csv(os.path.join(output_dir, f"{iot_device}.csv"), index=False)

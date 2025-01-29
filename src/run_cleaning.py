@@ -23,14 +23,14 @@ def process_local_datasets(iot_devices):
 
     # Iterate over each IoT device
     for iot_device in iot_devices:
-        # Get the list of file paths for normal and malicious data for the device
+        # Get the list of file paths for benign and malicious data for the device
         m_filenames = glob.glob(
             os.path.join(
                 DATA_DIR, "extracted_features", "malicious", "*", f"{iot_device}*.csv"
             )
         )
         b_filenames = glob.glob(
-            os.path.join(DATA_DIR, "extracted_features", "normal", f"{iot_device}*.csv")
+            os.path.join(DATA_DIR, "extracted_features", "benign", f"{iot_device}*.csv")
         )
 
         # Read and concatenate the chunks from all the files associated with the device
@@ -118,7 +118,7 @@ def save_cleaned_data(cleaned_data, output_dir):
 
 if __name__ == "__main__":
     # Define paths to local datasets
-    benign_filenames = os.path.join(DATA_DIR, "extracted_features", "normal", "*.csv")
+    benign_filenames = os.path.join(DATA_DIR, "extracted_features", "benign", "*.csv")
     iot_devices = list(
         set(
             [re.search(r"([a-zA-Z\-]+)-([0-9]+)", f).group(0) for f in benign_filenames]

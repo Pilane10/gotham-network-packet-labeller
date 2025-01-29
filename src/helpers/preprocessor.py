@@ -197,7 +197,7 @@ class DataPreprocessor:
         return df
 
     @staticmethod
-    def convert_time(self, df):
+    def convert_time(df):
         """
         Convert frame time to Unix timestamp.
 
@@ -209,6 +209,7 @@ class DataPreprocessor:
         """
         df["frame.time"] = df["frame.time"].str.replace("  ", " ")
         df["frame.time"] = df["frame.time"].str.replace(" BST", "")
+        df["frame.time"] = df["frame.time"].str.replace(" GMT", "")
         df["frame.time"] = pd.to_datetime(
             df["frame.time"], format="%b %d, %Y %H:%M:%S.%f000"
         )
@@ -326,7 +327,7 @@ class DataPreprocessor:
         Group the attack labels into broader categories.
         """
         attack_group = {
-            "Normal": "Normal",
+            "Benign": "Benign",
             "TCP Scan": "Network Scanning",
             "UDP Scan": "Network Scanning",
             "Telnet Brute Force": "Brute Force",

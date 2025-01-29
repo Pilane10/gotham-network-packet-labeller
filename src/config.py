@@ -140,7 +140,7 @@ global_categorical_values = pd.DataFrame(
 global_label_values = pd.DataFrame(
     {
         "label": [
-            "Normal",
+            "Benign",
             "TCP Scan",
             "UDP Scan",
             "Telnet Brute Force",
@@ -163,7 +163,7 @@ global_label_values = pd.DataFrame(
 global_label_grouped_values = pd.DataFrame(
     {
         "label": [
-            "Normal",
+            "Benign",
             "Network Scanning",
             "Brute Force",
             "Infection",

@@ -13,15 +13,11 @@
     {
         "source_ip": "192.168.0.200",
         "destination_ip": "192.168.20.10",
-        "start_time": "2022-07-18 20:25:03.154567000",
-        "end_time": "2022-07-18 20:25:13.407870000",
         "label": "CoAP Amplification"
     },
     {
         "source_ip": "192.168.20.10",
         "destination_ip": "192.168.0.200",
-        "start_time": "2022-07-18 20:25:03.155129000",
-        "end_time": "2022-07-18 20:25:13.407938000",
         "label": "CoAP Amplification"
     }
 ]

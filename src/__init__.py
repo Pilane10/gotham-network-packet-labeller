@@ -1,9 +1,9 @@
 import os
 
 EVENTS = [
-    "normal",
+    "benign",
     "coap-amplificator",
-    "masscan",
+    "network-scanning",
     "merlin",
     "mirai-dos",
     "mirai-infection",

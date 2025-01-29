@@ -11,12 +11,12 @@ from src import *
 def run_pipeline(
     csv_directory,
     output_directory,
-    normal_metadata_path,
+    benign_metadata_path,
     malicious_metadata_path,
     is_malicious=True,
 ):
-    # Load metadata for normal and malicious rules
-    normal_metadata = load_json_file(normal_metadata_path)
+    # Load metadata for benign and malicious rules
+    benign_metadata = load_json_file(benign_metadata_path)
     if malicious_metadata_path:
         malicious_metadata = load_json_file(malicious_metadata_path)
     else:
@@ -24,7 +24,7 @@ def run_pipeline(
 
     # Initialize Labeler with metadata
     labeller = Labeller(
-        normal_metadata=normal_metadata,
+        benign_metadata=benign_metadata,
         malicious_metadata=malicious_metadata,
     )
 
@@ -47,11 +47,11 @@ def run_pipeline(
 
 # Example execution
 if __name__ == "__main__":
-    normal_metadata_path = os.path.join(METADATA_DIR, "metadata-normal.json")
+    benign_metadata_path = os.path.join(METADATA_DIR, "metadata-benign.json")
     for event in EVENTS:
-        if event == "normal":
-            csv_directory = os.path.join(DATA_DIR, "extracted_features", "normal")
-            output_directory = os.path.join(DATA_DIR, "labelled", "normal")
+        if event == "benign":
+            csv_directory = os.path.join(DATA_DIR, "extracted_features", "benign")
+            output_directory = os.path.join(DATA_DIR, "labelled", "benign")
             malicious_metadata_path = None
             is_malicious = False
         else:
@@ -70,7 +70,7 @@ if __name__ == "__main__":
         run_pipeline(
             csv_directory=csv_directory,
             output_directory=output_directory,
-            normal_metadata_path=normal_metadata_path,
+            benign_metadata_path=benign_metadata_path,
             malicious_metadata_path=malicious_metadata_path,
             is_malicious=is_malicious,
         )
