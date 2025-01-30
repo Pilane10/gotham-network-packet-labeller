@@ -17,7 +17,7 @@ This repository contains a pipeline for processing the Gotham network traffic da
 
 ## **Installation**
 
-* Before running the pipeline, ensure you have **Python 3.8+** and **Tshark 4.2.2** golbally installed in your computer;*. If not, you can get python [here]() and tshark [here]().
+* Before running the pipeline, ensure you have **Python 3.8+** and **Tshark 4.2.2** golbally installed in your computer;*. If not, you can get python [here](https://www.python.org) and tshark [here](https://tshark.dev/setup/install/).
 * Then, clone the repository to your PC:
     ```bash
         $ git clone https://github.com/othmbela/gotham-network-packet-labeller.git
@@ -43,6 +43,7 @@ The pipeline is divided into the following stages:
 2. **Feature Cleaning:** Cleans and processes extracted features to ensure consistency.
 3. **Data Labelling:** Labels the cleaned datasets with attack and benign traffic labels.
 4. **Full Pipeline:** Executes all steps sequentially.
+
 
 ## **Usage**
 
@@ -78,32 +79,35 @@ make run_pipeline
 This will run feature extraction, feature cleaning, and data labelling one after the other, automating the entire pipeline.
 
 
-
-
 ## **Files and Folders Structure**
 
 The pipeline expects the following directory structure:
 ```
     ├── bash_scripts/
+    │
     ├── data/
     │   ├── raw/                     # Raw network traffic data (input)
     │   ├── extracted_features/      # Extracted features (output from feature extraction)
     │   ├── cleaned_features/        # Cleaned features (output from feature cleaning)
     │   └── labeled_data/            # Labeled data (output from labelling)
+    │
     ├── features/
     ├── images/
     ├── metadata/
     ├── notebooks/
+    │
     ├── scripts/
     │   ├── run_cleaning.py
     │   ├── run_extraction.py
     │   └── run_labelling.py
+    │
     ├── src/
     │   ├── __init__.py
     │   ├── feature_cleaner.py
     │   ├── feature_extractor.py
     │   ├── labeller.py
     │   └── utils.py
+    │
     ├── venv/
     ├── .dockerignore
     ├── .gitignore
@@ -116,7 +120,7 @@ The pipeline expects the following directory structure:
 
 ## Requirements
 
-All the experiments were conducted using a .
+All the experiments were conducted using a 64-bit Intel(R) Core(TM) i7-7500U CPU with 16GB RAM in Windows 10 environment.
 
 
 ## License
